@@ -1,0 +1,709 @@
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: grey;
+        margin: 0 0;
+        height: 1000px;
+        background-color: rgb(253, 253, 253);
+    }
+
+/* All Sections Headers  */
+.section-headers {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.header-name {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  color: #153b3e;
+  font-size: 1rem;
+  border-radius: 2rem;
+  background-color: #eaffd1; /* Light fill */
+  z-index: 0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Animated gradient border */
+.header-name::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  padding: 1px;
+  background: linear-gradient(270deg, #ccfca5, #80b349, #ccfca5);
+  background-size: 400% 400%;
+  animation: borderMove 4s linear infinite;
+  z-index: -1;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.header-name:hover {
+  transform: scale(1.05);
+}
+
+/* Border animation */
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+/* Section Subheading & Description */
+.header-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-details h2 {
+  font-size: 2.75rem;
+  color: #1f1f1f;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 0 0;
+}
+
+.header-details p {
+  font-size: 1rem;
+  color: #4b4b4b;
+  font-weight: 400;
+  max-width: 30rem;
+  line-height: 1.6;
+}
+
+
+
+
+.Hero-section {
+    height: 100vh;
+    background-color: #153b3e ;
+}
+    
+.About-section {
+padding: 5rem 0;
+background-color: rgb(253, 253, 253);
+}
+
+.about-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Card Container */
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+/* Card Base Style */
+.abt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 1.5rem;
+  max-width: 20rem;
+  text-align: center;
+  padding: 1.9rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, background-color 0.4s, color 0.3s;
+  transform: translateY(0);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animate on Entry */
+.abt-card:nth-child(2) { animation-delay: 0.1s; }
+.abt-card:nth-child(3) { animation-delay: 0.2s; }
+.abt-card:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Hover Effect */
+.abt-card:hover {
+  background-color: #142f32;
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.abt-card img {
+  height: 5rem;
+  width: 5rem;
+  background-color: #d5feb3;
+  padding: 1.75rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.abt-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Text Styling */
+.abt-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #1f1f1f;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.3s;
+}
+
+.abt-card p {
+  font-size: 0.825rem;
+  max-width: 13.5rem;
+  color: #4b4b4b;
+  line-height: 1.5;
+  transition: color 0.3s;
+}
+
+/* On Hover Text Color Override */
+.abt-card:hover h3 {
+  color: white;
+}
+
+.abt-card:hover p {
+  color: silver;
+}
+
+/* Featured Card (Always Dark) */
+.abt-card.featured {
+  background-color: #142f32;
+  color: white;
+}
+
+.abt-card.featured h3 {
+  color: white;
+}
+
+.abt-card.featured p {
+  color: silver;
+}
+
+
+.abt-learn-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.abt-button {
+  background-color: #ccfca5; 
+  color: #222629;            
+  text-decoration: none;
+  border: none;
+  padding: 0.85rem 1.8rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.abt-button span {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+/* Sliding effect overlay */
+.abt-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #222629; 
+  z-index: 1;
+  transform: skewX(40deg);
+  transition: left 0.4s ease;
+}
+
+/* Hover Effects */
+.abt-button:hover::before {
+  left: 100%; 
+}
+
+.abt-button:hover {
+  background-color: #222629; 
+  color: #ccfca5;            
+  transform: scale(1.05);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.abt-button:hover span {
+  color: #ccfca5;
+  font-weight: 700;
+}
+
+
+/* === Services Section === */
+.services-section {
+  padding: 5rem 0;
+  background-color: #0e2123;
+}
+
+.services-container {
+  max-width: 77rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.service-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* === Cards Container === */
+.servives-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* === Individual Card === */
+.service-crd {
+  flex: 1 1 calc(33.33% - 2rem);
+  max-width: 20rem;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 2.4rem 2rem;
+  background: rgba(20, 47, 50, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  cursor: pointer;
+}
+
+/* Animation delays for stagger */
+.service-crd:nth-child(2) { animation-delay: 0.1s; }
+.service-crd:nth-child(3) { animation-delay: 0.2s; }
+.service-crd:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Hover Effect === */
+.service-crd:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(61, 220, 145, 0.1), 0 8px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(204, 250, 165, 0.25);
+}
+
+/* === Icon === */
+.services-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding-left: 0.4rem;
+}
+
+/* === Text === */
+
+.ser-card-details {
+    margin: 0;
+}
+
+.ser-card-details h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.ser-card-details p {
+  font-size: 0.9rem;
+  color: #d4d4d4;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+  max-width: 18rem;
+}
+
+/* === Learn More Button === */
+.service-card-learn-more {
+  display: inline-block;
+  
+  font-size: 0.85rem;
+  color: #ccfca5;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service-card-learn-more span {
+  margin-left: 4px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.service-card-learn-more:hover {
+  color: #ffffff;
+}
+
+.service-card-learn-more:hover span {
+  transform: translateX(5px);
+}
+
+/* === Responsive Fix for Smaller Screens === */
+@media (max-width: 1024px) {
+  .service-crd {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-crd {
+    flex: 1 1 100%;
+  }
+}
+
+.project-counter-section {
+  padding: 4rem 0;
+  background: linear-gradient(-45deg, #153b3e, #142f32, #0e2123, #0f2a2c);
+  background-size: 600% 600%;
+  animation: gradientFlow 11s ease infinite;
+  color: #ccfca5;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.testimonial-section {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+}
+
+.testimonial-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  border: 1px solid #e3e3e3;
+  min-width: 20rem;
+  max-width: 20rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: #ccfca5;
+  margin-bottom: 1rem;
+}
+
+.card-text p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.client-details {
+  display: flex;
+  align-items: center;
+}
+
+.client-image img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.client-name {
+  margin-left: 0.75rem;
+}
+
+.client-name p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.client-location {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* SCROLLER (same logic reused from logo scroll) */
+.testimonial-row {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  margin-bottom: 2rem;
+}
+
+.testimonial-row .scroller__inner {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 120s linear infinite;
+}
+
+.scroller[data-direction="right"] .scroller__inner {
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+
+.counter-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.counter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.counter-card-details {
+  text-align: center;
+  color: #ccfca5;
+  transition: transform 0.3s ease;
+}
+
+.counter-card-details:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.counter-card-details h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.counter-card-details p {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #f0fff0;
+  margin: 0 0 0 0;
+}
+
+.FAQ-section {
+  background-color: #f5f5f5;
+  padding: 5rem 0;
+}
+
+.faq-container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.faq-container-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-bottom {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+
+/* Left: FAQs */
+.faq-left {
+  flex: 0 0 50%;
+}
+
+/* Right: Image */
+.faq-right {
+  flex: 0 0 50%;
+  background: url('/Pictures/faq-pic.png') no-repeat center center/cover;
+  border-radius: 1.5rem;
+  min-height: 30rem;
+  max-width: 30rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-right:hover {
+  transform: scale(1.03);
+}
+
+/* Section Heading */
+.faq-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #142f32;
+}
+
+.faq-title span {
+  color: #80b349;
+}
+
+/* FAQ List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* FAQ Card Default */
+.faq-item {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* FAQ Card Hover */
+.faq-item:hover {
+  background-color: #153b3e;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Question Button */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 1.3rem 1.55rem;
+  text-align: left;
+  color: #153b3e;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Icon Default */
+.faq-icon {
+  font-size: 1.5rem;
+  color: #153b3e;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.faq-item:hover .faq-question {
+  color: #ccfca5;
+}
+
+.faq-item:hover .faq-icon {
+  color: #ccfca5;
+  transform: scale(1.2);
+}
+
+/* Answer Section (Closed by default) */
+.faq-answer {
+  display: none;
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b4b4b;
+  transition: color 0.3s ease;
+}
+
+/* Opened FAQ Card */
+.faq-item.active {
+  background-color: #153b3e;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+  color: #e0e0e0; /* Light silver for readability */
+}
+
+.faq-item.active .faq-question {
+  color: #ccfca5;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg) scale(1.2);
+  color: #ccfca5;
+}
