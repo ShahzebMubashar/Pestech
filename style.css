@@ -90,6 +90,70 @@
 }
 
 
+/* All Sections bottom Buttons */
+.section-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.section-button-styling {
+  background-color: #ccfca5; 
+  color: #142f32;            
+  text-decoration: none;
+  border: none;
+  padding: 0.85rem 1.8rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-button-styling span {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+/* Sliding effect overlay */
+.section-button-styling::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #142f32; 
+  z-index: 1;
+  transform: skewX(40deg);
+  transition: left 0.4s ease;
+}
+
+/* Hover Effects */
+.section-button-styling:hover::before {
+  left: 100%; 
+}
+
+.section-button-styling:hover {
+  background-color: #142f32; 
+  color: #ccfca5;            
+  transform: scale(1.05);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-button-styling:hover span {
+  color: #ccfca5;
+  font-weight: 700;
+}
+
 
 
 .Hero-section {
@@ -218,68 +282,6 @@ background-color: rgb(253, 253, 253);
 }
 
 
-.abt-learn-more-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.abt-button {
-  background-color: #ccfca5; 
-  color: #222629;            
-  text-decoration: none;
-  border: none;
-  padding: 0.85rem 1.8rem;
-  font-weight: 600;
-  border-radius: 1.5rem;
-  font-family: inherit;
-  font-size: 1rem;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.abt-button span {
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
-  color: inherit;
-}
-
-/* Sliding effect overlay */
-.abt-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #222629; 
-  z-index: 1;
-  transform: skewX(40deg);
-  transition: left 0.4s ease;
-}
-
-/* Hover Effects */
-.abt-button:hover::before {
-  left: 100%; 
-}
-
-.abt-button:hover {
-  background-color: #222629; 
-  color: #ccfca5;            
-  transform: scale(1.05);
-  font-weight: 700;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.abt-button:hover span {
-  color: #ccfca5;
-  font-weight: 700;
-}
 
 
 /* === Services Section === */
@@ -307,6 +309,7 @@ background-color: rgb(253, 253, 253);
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 /* === Individual Card === */
@@ -584,6 +587,7 @@ background-color: rgb(253, 253, 253);
 
 .faq-bottom {
   display: flex;
+  flex-direction: row;
   align-items: top;
   justify-content: space-between;
   flex-wrap: wrap; 
@@ -706,4 +710,11 @@ background-color: rgb(253, 253, 253);
 .faq-item.active .faq-icon {
   transform: rotate(45deg) scale(1.2);
   color: #ccfca5;
+}
+
+@media (max-width:800px) {
+  .faq-bottom {
+    flex-direction: column;
+  }
+  
 }
