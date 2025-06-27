@@ -11,6 +11,7 @@
 <style>
 
 
+
 </style>
 
 </head>
@@ -24,8 +25,65 @@
   </header>
 
     <main>
-     
-        <section class="Hero-section"></section>
+
+          <section class="hero-section">
+          <div class="hero-bg"></div>
+
+          <div class="hero-content">
+          <h1>
+            <span class="custom-font">Power</span> Up Your Savings the 
+            <span class="custom-font">Green Way</span>
+          </h1>
+          <p>
+            Unlock massive savings with eco-conscious energy solutions that power your life and invest in a cleaner future while enjoying financial benefits today.
+          </p>
+          <div class="hero-buttons">
+            <!-- Primary Button -->
+            <button class="btn explore-btn">
+              <span class="btn__icon-wrapper">
+                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="10" class="btn__icon-svg">
+                  <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
+                </svg>
+                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="btn__icon-svg btn__icon-svg--copy">
+                  <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor" />
+                </svg>
+              </span>
+              Get Started
+            </button>
+
+            <!-- Secondary Button -->
+            <a href="#contact" class="btn secondary-btn">
+              <span class="btn-text">Get Started</span>
+              <span class="btn-icon"><i class="fa-solid fa-wrench"></i></span>
+            </a>
+          </div>
+
+        <div class="hero-reviews">
+          <div class="review-avatars">
+            <img src="Pictures/client-picture.jpg" alt="User 1" />
+            <img src="Pictures/client-picture.jpg" alt="User 2" />
+            <img src="Pictures/client-picture.jpg" alt="User 3" />
+          </div>
+          <div class="review-rating">
+            <div class="stars-line">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-value">4.9+</span>
+            </div>
+            <div class="review-count">
+              from <strong>1500+</strong> <a href="#">reviews</a>
+            </div>
+          </div>
+        </div>
+
+
+          </div>
+        </section>
 
         <section class="About-section">
             <div class="about-container">
@@ -91,7 +149,7 @@
                     <p class="header-name">Our Services</p>
                     <div class="header-details">
                       <h2 style="color: rgb(240, 240, 240);">Energy Solutions</h2>
-                      <p>Comprehensive solar services tailored for homes and businesses to simplify your energy journey.</p>
+                      <p style="color: rgb(225, 225, 225);">Comprehensive solar services tailored for homes and businesses to simplify your energy journey.</p>
                     </div>
                   </div>
 
@@ -439,8 +497,9 @@
             </div>
 
             <div class="faq-right">
-              <div class="faq-img"></div>
-            </div>
+            <img src="/Pictures/faq-pic.png" alt="FAQ Image" class="faq-img" />
+          </div>
+
             </div>
 
             <div class="section-buttons">
@@ -530,5 +589,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("heroVideo");
+    if (video) {
+      video.playbackRate = 1;
+    }
+  });
+</script>
+
 
 </html>
