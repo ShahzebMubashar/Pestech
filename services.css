@@ -187,7 +187,11 @@ body {
     color: silver;
 }
 
-/* Service Icon */
+.service-card.featured .service-link {
+    color: #ccfca5;
+}
+
+/* Service Icon - Fixed to show Font Awesome icons properly */
 .service-icon {
     display: flex;
     align-items: center;
@@ -200,13 +204,28 @@ body {
     transition: transform 0.3s ease;
 }
 
-.services-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+.service-icon i {
+    font-size: 2.5rem;
+    color: #153b3e;
+    transition: color 0.3s ease;
 }
 
 .service-card:hover .service-icon {
     transform: scale(1.1);
+    background-color: #ccfca5;
+}
+
+.service-card:hover .service-icon i {
+    color: #142f32;
+}
+
+/* Featured card icon styling */
+.service-card.featured .service-icon {
+    background-color: #ccfca5;
+}
+
+.service-card.featured .service-icon i {
+    color: #142f32;
 }
 
 /* Service Content */
@@ -247,7 +266,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #ccfca5;
+    color: #80b349;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
@@ -259,7 +278,7 @@ body {
 }
 
 .service-link:hover {
-    color: #80b349;
+    color: #153b3e;
 }
 
 .service-link:hover span {
@@ -410,9 +429,8 @@ body {
         height: 4rem;
     }
 
-    .services-icon {
-        width: 2rem;
-        height: 2rem;
+    .service-icon i {
+        font-size: 2rem;
     }
 
     .service-title {
