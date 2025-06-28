@@ -3,3 +3,121 @@
         margin: 0 0;
         background-color: rgb(248, 248, 248);
     }
+
+    .employees-section {
+    padding: 10rem 0 5rem 0;
+}
+
+.employees-container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.employees-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-cards {
+  max-width: 65rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.team-card {
+  width: calc((65rem - 2 * 5rem) / 3);
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* permanent shadow */
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22); /* stronger shadow on hover */
+}
+
+/* Image */
+.team-card img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Footer */
+.team-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  background-color: #e6f8d8;
+  border-top: none; /* remove any default spacing */
+}
+
+.team-card.primary .team-card-footer {
+  background-color: #142f32;
+}
+
+/* Info */
+.team-info h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #142f32;
+}
+
+.team-info p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0;
+}
+
+.team-card.primary .team-info h4 {
+  color: #e6f8d8;
+}
+
+.team-card.primary .team-info p {
+  color: #ccfca5;
+}
+
+/* Social Icons */
+.team-socials {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.1rem;
+  color: #142f32;
+  transition: all 0.3s ease;
+}
+
+.team-socials i {
+  transition: transform 0.3s ease;
+}
+
+.team-socials i:hover {
+  transform: scale(1.25);
+}
+
+.team-card.primary .team-socials {
+  color: #e6f8d8;
+}
+
+.about-join-team {
+    padding: 4rem 0;
+    background-color: #e6f8d8;
+}
+
+.join-team-container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.join-team-wrapper {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,265 @@
+
+    body {
+        background-color: #f5f8f9;
+        margin: 0;
+        font-family: 'Manrope', Times;
+    overflow-x: hidden;
+    }
+
+    a:hover {
+        cursor: pointer;
+    }
+            
+    footer {
+        padding-bottom: 2rem;
+        color: white;
+        background-color: rgb(3, 6, 7);
+        
+    }
+.multidexters {
+    color: #c1fe8f;
+    text-decoration: none;
+    padding-right: 3px;
+    transition: all 0.3s ease;
+}
+
+.multidexters:hover {
+    font-size: 1.1rem;
+    padding: 0 5px;
+}
+
+
+    .footer-container {
+        width: 100%;
+        max-width: 70rem;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+
+    .f-top-card-left {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+
+    .f-top-card-right {
+        flex: 0 0 65%;
+        max-width: 65%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .f-top-card-left h2 {
+        font-size: 3.5rem;
+        margin: 1rem 0 0 0;
+    }
+
+    .f-top-card-left p {
+        max-width: 20rem;
+        color: rgb(215, 215, 215);
+    }
+
+    .f-top-card h2 {
+        margin: 1rem 0 0 0;
+        font-size: 3rem;
+    }
+
+    .f-top-card h3 {
+        color: #ccfca5;
+        font-weight: 800;
+        font-size: 1.35rem;
+    }
+
+    .f-top-card a {
+    color: rgb(218, 217, 217);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
+    }
+
+    .f-top-card a:hover {
+    color: #c1fe8f;
+    font-size: 0.95rem;
+    }
+    @media (min-width: 801px) and (max-width: 1150px) {
+
+    .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    max-width: 70rem;
+    margin: 0 auto;
+    }
+
+
+    .f-top-card-left {
+        text-align: center;
+    }
+
+    .f-top-card-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;      
+    text-align: center;
+    }
+
+    .f-top-card,
+    .f-top-card-social {
+        min-width: 180px; 
+        flex-shrink: 0;   
+    }
+
+    }
+
+    hr {
+    border: none;
+    border-top: 0.1px solid #9f9f9f;
+    margin: 2rem 0;
+    }
+
+    .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .f-top-card-social {
+        text-align: center;
+    }
+
+    .f-top-card-social h3 {
+        color: #ccfca5;
+        font-weight: 800;
+        font-size: 1.35rem;
+    }
+
+    .mail a {
+        max-width: 20rem;
+        text-decoration: none;
+        color: rgb(215, 215, 215);
+    }
+
+    ul {
+    list-style: none;
+    }
+
+    .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    }
+
+    .social-item {
+    position: relative;
+    margin: 0 10px;
+    }
+
+    .tooltip-text {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    }
+
+    .social-item:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+    bottom: -50px;
+    }
+
+    .social-link {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #393939;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .social-link:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+    color: #fff;
+    }
+
+    .social-link i {
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 1;
+    }
+
+    .hover-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 0;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .social-link:hover .hover-bg {
+    height: 100%;
+    }
+
+    .social-link[data-platform="linkedin"] .hover-bg,
+    .social-link[data-platform="linkedin"] ~ .tooltip-text {
+    background-color: #0077b5;
+    }
+
+    .social-link[data-platform="instagram"] .hover-bg,
+    .social-link[data-platform="instagram"] ~ .tooltip-text {
+    background: linear-gradient(
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+    );
+    }
+
+    .social-link[data-platform="facebook"] .hover-bg,
+    .social-link[data-platform="facebook"] ~ .tooltip-text {
+    background-color: #3b5998;
+    }
+
+
+    @media (max-width:800px) {
+
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .f-top-card-left {
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .f-top-card-right {
+            flex-direction: column;
+        }
+
+    }
