@@ -6,64 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get In Touch - Contact Form</title>
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="common.css">
+    
 </head>
 
 <body>
 
     <div id="navbar-placeholder"></div>
 
-    <div class="container">
+<div class="section-wrapper">
+  <p class="section-tag">Contact</p>
+  <div class="section-content" style="margin-bottom: 0.5rem;">
+    <h2>Get In Touch</h2>
+    <p>Have questions or ready to go solar? Reach out to us. We’re here to guide you every step forward.</p>
+  </div>
+</div>
 
-        <section class="pages-header-section">
-        <div class="section-headers" style="padding: 7rem 0;">
-            <p class="header-name">Contact</p>
-            <div class="header-details" style="margin-bottom: 0.5rem;">
-                <h2>Get In Touch</h2>
-                <p>Have questions or ready to go solar? Reach out to us. We’re here to guide you every step forward.</p>
-            </div>
-        </div>
-        </section>
-        
+
+    <div class="container">
         <!-- Contact Section -->
-        <section class="contactpage-section">
-            <div class="contactpage-wrapper">
+        <section class="contact-section">
+            <div class="contact-wrapper">
                 <!-- Contact Information Card -->
-                <div class="contactpage-info-card">
+                <div class="contact-info-card">
                     <h2>Contact Information</h2>
                     <p class="info-description">Feel free to reach out via phone, email, or visit us at our Lahore
                         office.</p>
 
 
-                    <div class="contactpage-details">
+                    <div class="contact-details">
                         <!-- Phone -->
-                        <div class="contactpage-item">
-                            <div class="contactpage-icon">
+                        <div class="contact-item">
+                            <div class="contact-icon">
                                 📞
                             </div>
-                            <div class="contactpage-text">
+                            <div class="contact-text">
                                 <div>+92 (322) 8469345</div>
                                 <div>+92 (336) 8514564</div>
                             </div>
                         </div>
 
                         <!-- Email -->
-                        <div class="contactpage-item">
-                            <div class="contactpage-icon">
+                        <div class="contact-item">
+                            <div class="contact-icon">
                                 ✉️
                             </div>
-                            <div class="contactpage-text">
+                            <div class="contact-text">
                                 <div>info@pes&amp;tech.com</div>
                                 <div>contact@pes&amp;tech.com</div>
                             </div>
                         </div>
 
                         <!-- Address -->
-                        <div class="contactpage-item">
-                            <div class="contactpage-icon">
+                        <div class="contact-item">
+                            <div class="contact-icon">
                                 📍
                             </div>
-                            <div class="contactpagepage-text">
+                            <div class="contact-text">
                                 <div>64-A, 1st Floor, Bismillah Housing,</div>
                                 <div>GT Road, Lahore.</div>
                             </div>
@@ -130,8 +129,6 @@
         </section>
     </div>
 
-
-
     <script>
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -164,24 +161,6 @@
 
 
     <script src="loadNavbar.js"></script>
-
-
-
-    <div id="footer-placeholder"></div>
-
-    <!-- Script to load footer -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('Footer/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading the footer:', error);
-                });
-        });
-    </script>
 </body>
 
 </html>

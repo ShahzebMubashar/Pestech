@@ -1,7 +1,12 @@
+body {
+    background-color: rgb(253, 253, 253);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 7rem 20px;
+    background-color: rgb(253, 253, 253);
 }
 
 .pages-header-section {
