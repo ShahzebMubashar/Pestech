@@ -1,71 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Energy Loader</title>
   <link rel="stylesheet" href="style.css">
 
-<style>
-    body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
 
-.loader-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+    .loader-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-.bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
 
-.icon-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 15rem;
-  height: 15rem;
-  z-index: 2;
-}
+    .icon-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 15rem;
+      height: 15rem;
+      z-index: 2;
+    }
 
-.energy-icon {
-  width: 100%;
-  height: 100%;
-}
+    .energy-icon {
+      width: 100%;
+      height: 100%;
+    }
 
-.fill-clip {
-  animation: fillUp 3s ease-in-out infinite;
-}
+    .fill-clip {
+      animation: fillUp 3s ease-in-out infinite;
+    }
 
-@keyframes fillUp {
-  0% {
-    y: 64;
-    height: 0;
-  }
-  50% {
-    y: 32;
-    height: 32;
-  }
-  100% {
-    y: 0;
-    height: 64;
-  }
-}
+    @keyframes fillUp {
+      0% {
+        y: 64;
+        height: 0;
+      }
 
-</style>
+      50% {
+        y: 32;
+        height: 32;
+      }
+
+      100% {
+        y: 0;
+        height: 64;
+      }
+    }
+  </style>
 
 </head>
+
 <body>
   <div class="loader-container">
     <img src="/Pictures/hero-bg.png" alt="Background" class="bg-image" />
@@ -77,14 +81,15 @@
             <rect class="fill-clip" x="0" y="64" width="64" height="64" />
           </clipPath>
         </defs>
-        
+
         <!-- Outer shape (e6f8d8) -->
-        <path fill="#e6f8d8" d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z"/>
+        <path fill="#e6f8d8" d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z" />
 
         <!-- Fill shape (clip masked) -->
-        <path fill="#142f32" clip-path="url(#liquid-fill)" d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z"/>
+        <path fill="#142f32" clip-path="url(#liquid-fill)" d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z" />
       </svg>
     </div>
   </div>
 </body>
+
 </html>

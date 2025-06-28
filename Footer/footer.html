@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pestech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background: #153b3e;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ccfca5, transparent);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Brand Section */
+    .footer-brand {
+      max-width: 400px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ccfca5, #80b349);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f172a;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ccfca5, #80b349);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-tagline {
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .social-link:hover {
+      background: #ccfca5;
+      color: #0f172a;
+      transform: translateY(-2px);
+    }
+
+    /* Footer Sections */
+    .footer-section {
+      padding: 0.5rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #ccfca5;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: #ccfca5;
+      border-radius: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccfca5;
+      transform: translateX(5px);
+    }
+
+    /* Contact Section */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-left: -25%;
+    }
+
+    .contact-icon {
+      min-width: 36px;
+      height: 36px;
+      background: rgba(204, 252, 165, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccfca5;
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover .contact-icon {
+      background: rgba(204, 252, 165, 0.2);
+      transform: scale(1.05);
+    }
+
+    .contact-item a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      color: #ccfca5;
+      text-decoration: underline;
+    }
+
+    .contact-item address {
+      font-style: normal;
+      margin: 0;
+      color: inherit;
+    }
+
+    /* Get in Touch Section */
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .newsletter-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #ccfca5;
+      box-shadow: 0 0 0 3px rgba(204, 252, 165, 0.1);
+    }
+
+    .newsletter-btn {
+      padding: 0 1.25rem;
+      background: linear-gradient(135deg, #ccfca5, #80b349);
+      border: none;
+      border-radius: 8px;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .newsletter-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(204, 252, 165, 0.3);
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .copyright {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-legal a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #ccfca5;
+    }
+
+    /* Background Pattern */
+    .footer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(204, 252, 165, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(204, 252, 165, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        max-width: none;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+
+      .brand-name {
+        font-size: 1.6rem;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .footer-links a {
+        justify-content: center;
+      }
+
+      .contact-item {
+        justify-content: center;
+        text-align: center;
+        margin-left: 1%;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+
+      .footer-legal {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-container {
+        padding: 2.5rem 1.25rem 1.25rem;
+      }
+
+      .footer-section {
+        padding: 0;
+        text-align: center;
+      }
+
+      .brand-name {
+        font-size: 1.5rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.95rem;
+        max-width: 350px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        margin-left: 1%;
+      }
+
+      .contact-item address {
+        text-align: center;
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .footer-container {
+        padding: 2rem 1rem 1rem;
+      }
+
+      .brand-name {
+        font-size: 1.4rem;
+      }
+
+      .brand-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+
+      .social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+
+      .footer-grid {
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.9rem;
+        max-width: 300px;
+      }
+
+      .contact-item {
+        margin-bottom: 1.25rem;
+        margin-left: 0%;
+      }
+
+      .contact-item address {
+        font-size: 0.9rem;
+        max-width: 250px;
+      }
+
+      .newsletter-input {
+        font-size: 0.85rem;
+        padding: 0.7rem 0.9rem;
+      }
+
+      .newsletter-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .footer-legal {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .copyright {
+        font-size: 0.85rem;
+      }
+
+      .footer-legal a {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .footer-container {
+        padding: 1.5rem 0.75rem 0.75rem;
+      }
+
+      .brand-name {
+        font-size: 1.3rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.85rem;
+        max-width: 280px;
+      }
+
+      .footer-section h3 {
+        font-size: 0.95rem;
+      }
+
+      .footer-links a {
+        font-size: 0.9rem;
+      }
+
+      .contact-item address {
+        font-size: 0.85rem;
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon">
+              <i class="fas fa-solar-panel"></i>
+            </div>
+            <h2 class="brand-name">Pestech</h2>
+          </div>
+          <p class="brand-tagline">
+            Empowering a brighter tomorrow with smart, sustainable solar solutions — one rooftop at a time.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Company Section -->
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <a href="tel:+923328469345">+92 332 8469345</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <a href="mailto:info@pes&tech.com">info@pes&tech.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <address>64-A Commercial, 1st Floor, Bismillah Housing Scheme, GT Road, Lahore, Pakistan.</address>
+          </div>
+        </div>
+
+        <!-- Get in Touch Section -->
+        <div class="footer-section">
+          <h3>Get in Touch</h3>
+          <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.5;">
+            Subscribe to our newsletter for the latest updates on solar technology and sustainable energy solutions.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          © Multidexters 2025 | All rights Reserved
+        </div>
+        <div class="footer-legal">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
