@@ -26,44 +26,44 @@
         </section>
         
         <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="contact-wrapper">
+        <section class="contactpage-section">
+            <div class="contactpage-wrapper">
                 <!-- Contact Information Card -->
-                <div class="contact-info-card">
+                <div class="contactpage-info-card">
                     <h2>Contact Information</h2>
                     <p class="info-description">Feel free to reach out via phone, email, or visit us at our Lahore
                         office.</p>
 
 
-                    <div class="contact-details">
+                    <div class="contactpage-details">
                         <!-- Phone -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contactpage-item">
+                            <div class="contactpage-icon">
                                 📞
                             </div>
-                            <div class="contact-text">
+                            <div class="contactpage-text">
                                 <div>+92 (322) 8469345</div>
                                 <div>+92 (336) 8514564</div>
                             </div>
                         </div>
 
                         <!-- Email -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contactpage-item">
+                            <div class="contactpage-icon">
                                 ✉️
                             </div>
-                            <div class="contact-text">
+                            <div class="contactpage-text">
                                 <div>info@pes&amp;tech.com</div>
                                 <div>contact@pes&amp;tech.com</div>
                             </div>
                         </div>
 
                         <!-- Address -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        <div class="contactpage-item">
+                            <div class="contactpage-icon">
                                 📍
                             </div>
-                            <div class="contact-text">
+                            <div class="contactpagepage-text">
                                 <div>64-A, 1st Floor, Bismillah Housing,</div>
                                 <div>GT Road, Lahore.</div>
                             </div>
@@ -130,6 +130,8 @@
         </section>
     </div>
 
+
+
     <script>
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -162,6 +164,24 @@
 
 
     <script src="loadNavbar.js"></script>
+
+
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the footer:', error);
+                });
+        });
+    </script>
 </body>
 
 </html>

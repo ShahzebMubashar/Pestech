@@ -21,11 +21,11 @@
 
 
 /* Contact Section */
-.contact-section {
+.contactpage-section {
     padding: 40px 0 80px;
 }
 
-.contact-wrapper {
+.contactpage-wrapper {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 60px;
@@ -33,7 +33,7 @@
 }
 
 /* Contact Information Card */
-.contact-info-card {
+.contactpage-info-card {
     background: #153b3e;
     color: white;
     padding: 40px 30px;
@@ -43,7 +43,7 @@
     min-height: 500px;
 }
 
-.contact-info-card h2 {
+.contactpage-info-card h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 15px;
@@ -56,19 +56,19 @@
     line-height: 1.5;
 }
 
-.contact-details {
+.contactpage-details {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.contact-item {
+.contactpage-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
 }
 
-.contact-icon {
+.contactpage-icon {
     width: 20px;
     height: 20px;
     color: white;
@@ -76,12 +76,12 @@
     margin-top: 2px;
 }
 
-.contact-text {
+.contactpage-text {
     font-size: 0.95rem;
     line-height: 1.4;
 }
 
-.contact-text div {
+.contactpage-text div {
     margin-bottom: 2px;
 }
 
@@ -227,12 +227,12 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .contact-wrapper {
+    .contactpage-wrapper {
         grid-template-columns: 350px 1fr;
         gap: 40px;
     }
 
-    .contact-info-card {
+    .contactpage-info-card {
         padding: 35px 25px;
     }
 
@@ -251,12 +251,12 @@
         padding: 0 20px;
     }
 
-    .contact-wrapper {
+    .contactpage-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .contact-info-card {
+    .contactpage-info-card {
         order: 2;
         min-height: auto;
         padding: 30px 25px;
@@ -294,21 +294,21 @@
         font-size: 2rem;
     }
 
-    .contact-section {
+    .contactpage-section {
         padding: 30px 0 60px;
     }
 
-    .contact-info-card,
+    .contactpage-info-card,
     .contact-form {
         padding: 25px 20px;
         border-radius: 15px;
     }
 
-    .contact-info-card h2 {
+    .contactpage-info-card h2 {
         font-size: 1.5rem;
     }
 
-    .contact-details {
+    .contactpage-details {
         gap: 25px;
     }
 
@@ -344,7 +344,7 @@
         font-size: 1.8rem;
     }
 
-    .contact-info-card,
+    .contactpage-info-card,
     .contact-form {
         padding: 20px 15px;
     }
