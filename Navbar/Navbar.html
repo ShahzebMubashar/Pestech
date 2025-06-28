@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="Navbar/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Navbar</title>
 </head>
 
@@ -39,17 +40,48 @@
             <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <div class="mobile-nav">
-                    <a href="#" class="nav-link active">Home</a>
-                    <a href="#" class="nav-link">Services</a>
-                    <a href="#" class="nav-link">Projects</a>
-                    <a href="#" class="nav-link">About Us</a>
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="about.html" class="nav-link">About Us</a>
                     <div class="mobile-contact-btn">
-                        <a href="#contact" class="contact-btn">Contact Us</a>
+                        <a href="contact.html" class="contact-btn">Contact Us</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleBtn = document.querySelector('.mobile-menu-toggle i');
+
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                toggleBtn.classList.remove('fa-times');
+                toggleBtn.classList.add('fa-bars');
+            } else {
+                mobileMenu.classList.add('active');
+                toggleBtn.classList.remove('fa-bars');
+                toggleBtn.classList.add('fa-times');
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileLinks = document.querySelectorAll('.mobile-nav .nav-link');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const toggleBtn = document.querySelector('.mobile-menu-toggle i');
+                    mobileMenu.classList.remove('active');
+                    toggleBtn.classList.remove('fa-times');
+                    toggleBtn.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
