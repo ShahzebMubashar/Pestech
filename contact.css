@@ -4,26 +4,21 @@
     padding: 7rem 20px;
 }
 
-/* Header Styles */
-.header {
-    text-align: center;
-    padding: 60px 0 40px;
+.pages-header-section {
+  height: 50vh;
+  background: linear-gradient(
+    to bottom,
+    #eaffd1 0vh,
+    #eaffd1 12vh,
+    #f4fbdc 17vh,
+    #f9fceb 22vh,
+    #fcfdf7 27vh,
+    #fdfdfd 30vh,
+    rgb(253, 253, 253) 50vh
+  );
 }
 
-.header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 20px;
-}
 
-.header p {
-    font-size: 1.1rem;
-    color: #718096;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
 
 /* Contact Section */
 .contact-section {
