@@ -136,22 +136,41 @@
         <section class="get-solar">
             <div class="get-solar-container">
                 <div class="get-solar-wrapper">
-                            <div class="page-bottom-card">
-                <div class="page-bottom-card-inner">
-                    <h2>Professional</h2>
-                    <p>Designed for greater flexibility, this solution offers advanced tools for custom tailoring you need.</p>
-                    <a href="#" class="page-bottom-btn"><span>Get Started</span></a>
-                </div>
-                </div>
+                    <div class="page-bottom-card">
+                        <div class="page-bottom-card-inner">
+                            <h2>Professional</h2>
+                            <p>Designed for greater flexibility, this solution offers advanced tools for custom
+                                tailoring you need.</p>
+                            <a href="#" class="page-bottom-btn"><span>Get Started</span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
         </section>
 
     </main>
 
     <!-- JS to load navbar -->
     <script src="loadNavbar.js"></script>
+
+
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the footer:', error);
+                });
+        });
+    </script>
 </body>
 
 </html>

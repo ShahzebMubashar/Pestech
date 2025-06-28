@@ -2,153 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get In Touch - Contact Form</title>
-    <link rel="stylesheet" href="contact.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="contact.css" />
 </head>
 
 <body>
 
     <div id="navbar-placeholder"></div>
 
-            <section class="services-hero">
-            <div class="hero-content">
-                <div class="section-headers">
-                    <p class="header-name">Our Services</p>
-                    <div class="header-details">
-                        <h1>Comprehensive Solar Solutions</h1>
-                        <p>We offer reliable, affordable, and sustainable energy services tailored for every home and
-                            business in Lahore and beyond.</p>
-                    </div>
+    <section class="cf-hero">
+        <div class="cf-hero-content">
+            <div class="cf-section-headers">
+                <p class="cf-header-name">Our Services</p>
+                <div class="cf-header-details">
+                    <h1>Comprehensive Solar Solutions</h1>
+                    <p>We offer reliable, affordable, and sustainable energy services tailored for every home and
+                        business in Lahore and beyond.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <div class="cf-container">
+        <section class="cf-section">
+            <div class="cf-wrapper">
 
-    <div class="container">
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="contact-wrapper">
-                <!-- Contact Information Card -->
-                <div class="contact-info-card">
+                <!-- Contact Information -->
+                <div class="cf-info-card">
                     <h2>Contact Information</h2>
-                    <p class="info-description">Feel free to reach out via phone, email, or visit us at our Lahore
+                    <p class="cf-info-description">Feel free to reach out via phone, email, or visit us at our Lahore
                         office.</p>
 
-
-                    <div class="contact-details">
-                        <!-- Phone -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                📞
-                            </div>
-                            <div class="contact-text">
+                    <div class="cf-details">
+                        <div class="cf-item">
+                            <div class="cf-icon">📞</div>
+                            <div class="cf-text">
                                 <div>+92 (322) 8469345</div>
                                 <div>+92 (336) 8514564</div>
                             </div>
                         </div>
-
-                        <!-- Email -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                ✉️
-                            </div>
-                            <div class="contact-text">
+                        <div class="cf-item">
+                            <div class="cf-icon">✉️</div>
+                            <div class="cf-text">
                                 <div>info@pes&amp;tech.com</div>
                                 <div>contact@pes&amp;tech.com</div>
                             </div>
                         </div>
-
-                        <!-- Address -->
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                📍
-                            </div>
-                            <div class="contact-text">
+                        <div class="cf-item">
+                            <div class="cf-icon">📍</div>
+                            <div class="cf-text">
                                 <div>64-A, 1st Floor, Bismillah Housing,</div>
                                 <div>GT Road, Lahore.</div>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- Decorative circles -->
-                    <div class="decorative-circle circle-1"></div>
-                    <div class="decorative-circle circle-2"></div>
+                    <div class="cf-circle cf-circle-1"></div>
+                    <div class="cf-circle cf-circle-2"></div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form">
+                <div class="cf-form">
                     <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
+                        <div class="cf-form-row">
+                            <div class="cf-form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="John Trangely" required>
+                                <input type="text" id="name" name="name" placeholder="John Trangely" required />
                             </div>
-                            <div class="form-group">
+                            <div class="cf-form-group">
                                 <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" placeholder="hello@nurency.com" required>
+                                <input type="email" id="email" name="email" placeholder="hello@nurency.com" required />
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="cf-form-group">
                             <label for="subject">Your Subject</label>
                             <input type="text" id="subject" name="subject" placeholder="I want to hire you quickly"
-                                required>
+                                required />
                         </div>
 
-                        <div class="form-group">
+                        <div class="cf-form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Write here your message"
                                 required></textarea>
-                            <div class="cursor-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                            <div class="cf-cursor-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" fill="#1ABCB8" stroke="#1ABCB8"
                                         stroke-width="2" stroke-linejoin="round" />
                                 </svg>
                             </div>
                         </div>
 
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="cf-submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
         </section>
 
         <!-- Map Section -->
-        <section class="map-section">
+        <section class="cf-map-section">
             <h2>Find Us on the Map</h2>
-            <div class="map-container">
+            <div class="cf-map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1699.1942459839076!2d74.48188!3d31.595813000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919110069ad4563%3A0x1746dd2599707b31!2sPakistan%20Engineering%20services%20%26%20Technologies!5e0!3m2!1sen!2sus!4v1751052056379!5m2!1sen!2sus"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1699.1882443924183!2d74.48255!3d31.596142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919110069ad4563%3A0x1746dd2599707b31!2sPakistan%20Engineering%20services%20%26%20Technologies!5e0!3m2!1sen!2sus!4v1751133848267!5m2!1sen!2sus"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-
             </div>
         </section>
     </div>
 
     <script>
-        // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
 
-            // Simple validation
             if (!data.name || !data.email || !data.subject || !data.message) {
                 alert('Please fill in all required fields.');
                 return;
             }
 
-            // Simulate form submission
-            const submitBtn = this.querySelector('.submit-btn');
+            const submitBtn = this.querySelector('.cf-submit-btn');
             const originalText = submitBtn.textContent;
 
             submitBtn.textContent = 'Sending...';
@@ -163,8 +139,18 @@
         });
     </script>
 
-
     <script src="loadNavbar.js"></script>
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading the footer:', error));
+        });
+    </script>
 </body>
 
 </html>

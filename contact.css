@@ -1,32 +1,30 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
 }
 
-.container {
+.cf-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0rem 0 20px 0;
 }
 
 /* Hero Section */
-.services-hero {
+.cf-hero {
     padding: 10rem 0 2.5rem 0;
     background: linear-gradient(180deg, #eaffd1 0%, rgb(253, 253, 253) 100%);
     text-align: center;
 }
 
-.hero-content {
+.cf-hero-content {
     max-width: 75rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-/* Section Headers (matching index.html) */
-.section-headers {
+.cf-section-headers {
     text-align: center;
 }
 
-.header-name {
+.cf-header-name {
     position: relative;
     display: inline-block;
     padding: 0.6rem 1.4rem;
@@ -40,7 +38,7 @@ body {
     overflow: hidden;
 }
 
-.header-name::before {
+.cf-header-name::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -61,7 +59,7 @@ body {
     box-sizing: border-box;
 }
 
-.header-name:hover {
+.cf-header-name:hover {
     transform: scale(1.05);
 }
 
@@ -75,14 +73,14 @@ body {
     }
 }
 
-.header-details {
+.cf-header-details {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.header-details h1 {
+.cf-header-details h1 {
     font-size: 3rem;
     color: #153b3e;
     font-weight: 700;
@@ -91,7 +89,7 @@ body {
     line-height: 1.2;
 }
 
-.header-details p {
+.cf-header-details p {
     font-size: 0.9rem;
     color: #4b4b4b;
     font-weight: 400;
@@ -100,31 +98,26 @@ body {
     margin: 0;
 }
 
-
 @media (max-width: 900px) {
-    
-    .services-hero {
+    .cf-hero {
         padding-top: 9rem;
     }
 
-    .header-details h1 {
-    font-size: 2rem;
+    .cf-header-details h1 {
+        font-size: 2rem;
     }
 
-    .header-details p {
+    .cf-header-details p {
         font-size: 0.8rem;
-        
     }
-    
 }
 
-
 /* Contact Section */
-.contact-section {
+.cf-section {
     padding: 5rem 0;
 }
 
-.contact-wrapper {
+.cf-wrapper {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 60px;
@@ -132,7 +125,7 @@ body {
 }
 
 /* Contact Information Card */
-.contact-info-card {
+.cf-info-card {
     background: #153b3e;
     color: white;
     padding: 40px 30px;
@@ -142,32 +135,32 @@ body {
     min-height: 500px;
 }
 
-.contact-info-card h2 {
+.cf-info-card h2 {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-.info-description {
+.cf-info-description {
     font-size: 0.95rem;
     opacity: 0.9;
     margin-bottom: 40px;
     line-height: 1.5;
 }
 
-.contact-details {
+.cf-details {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.contact-item {
+.cf-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
 }
 
-.contact-icon {
+.cf-icon {
     width: 20px;
     height: 20px;
     color: white;
@@ -175,30 +168,30 @@ body {
     margin-top: 2px;
 }
 
-.contact-text {
+.cf-text {
     font-size: 0.95rem;
     line-height: 1.4;
 }
 
-.contact-text div {
+.cf-text div {
     margin-bottom: 2px;
 }
 
 /* Decorative Circles */
-.decorative-circle {
+.cf-circle {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
 }
 
-.circle-1 {
+.cf-circle-1 {
     width: 120px;
     height: 120px;
     bottom: -20px;
     right: -20px;
 }
 
-.circle-2 {
+.cf-circle-2 {
     width: 80px;
     height: 80px;
     bottom: 60px;
@@ -207,26 +200,26 @@ body {
 }
 
 /* Contact Form */
-.contact-form {
+.cf-form {
     background: white;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.form-row {
+.cf-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 20px;
 }
 
-.form-group {
+.cf-form-group {
     margin-bottom: 20px;
     position: relative;
 }
 
-.form-group label {
+.cf-form-group label {
     display: block;
     font-size: 0.9rem;
     color: #4a5568;
@@ -234,8 +227,8 @@ body {
     font-weight: 500;
 }
 
-.form-group input,
-.form-group textarea {
+.cf-form-group input,
+.cf-form-group textarea {
     width: 100%;
     padding: 15px;
     border: none;
@@ -247,24 +240,24 @@ body {
     outline: none;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.cf-form-group input:focus,
+.cf-form-group textarea:focus {
     border-bottom-color: #1ABCB8;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.cf-form-group input::placeholder,
+.cf-form-group textarea::placeholder {
     color: #a0aec0;
 }
 
-.form-group textarea {
+.cf-form-group textarea {
     height: 120px;
     resize: vertical;
     font-family: inherit;
 }
 
 /* Cursor Icon */
-.cursor-icon {
+.cf-cursor-icon {
     position: absolute;
     bottom: 15px;
     right: 15px;
@@ -272,7 +265,7 @@ body {
 }
 
 /* Submit Button */
-.submit-btn {
+.cf-submit-btn {
     background: #142f32;
     color: white;
     border: none;
@@ -285,31 +278,31 @@ body {
     margin-top: 10px;
 }
 
-.submit-btn:hover {
+.cf-submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(26, 188, 184, 0.3);
 }
 
-.submit-btn:disabled {
+.cf-submit-btn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none;
 }
 
 /* Map Section */
-.map-section {
+.cf-map-section {
     padding: 60px 0;
     text-align: center;
 }
 
-.map-section h2 {
+.cf-map-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 40px;
 }
 
-.map-container {
+.cf-map-container {
     width: 100%;
     height: 450px;
     border-radius: 20px;
@@ -318,7 +311,7 @@ body {
     border: 1px solid #e2e8f0;
 }
 
-.map-container iframe {
+.cf-map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
@@ -326,129 +319,108 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .contact-wrapper {
+    .cf-wrapper {
         grid-template-columns: 350px 1fr;
         gap: 40px;
     }
 
-    .contact-info-card {
+    .cf-info-card {
         padding: 35px 25px;
     }
 
-    .contact-form {
+    .cf-form {
         padding: 35px;
     }
 }
 
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2.5rem;
-    }
-
-    .header p {
-        font-size: 1rem;
-        padding: 0 20px;
-    }
-
-    .contact-wrapper {
+    .cf-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .contact-info-card {
+    .cf-info-card {
         order: 2;
         min-height: auto;
         padding: 30px 25px;
     }
 
-    .contact-form {
+    .cf-form {
         order: 1;
         padding: 30px 25px;
     }
 
-    .form-row {
+    .cf-form-row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .map-section h2 {
+    .cf-map-section h2 {
         font-size: 2rem;
     }
 
-    .map-container {
+    .cf-map-container {
         height: 350px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
+    .cf-container {
         padding: 0 15px;
     }
 
-    .header {
-        padding: 40px 0 30px;
-    }
-
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .contact-section {
+    .cf-section {
         padding: 30px 0 60px;
     }
 
-    .contact-info-card,
-    .contact-form {
+    .cf-info-card,
+    .cf-form {
         padding: 25px 20px;
         border-radius: 15px;
     }
 
-    .contact-info-card h2 {
+    .cf-info-card h2 {
         font-size: 1.5rem;
     }
 
-    .contact-details {
+    .cf-details {
         gap: 25px;
     }
 
-    .form-group input,
-    .form-group textarea {
+    .cf-form-group input,
+    .cf-form-group textarea {
         padding: 12px;
         font-size: 0.95rem;
     }
 
-    .submit-btn {
+    .cf-submit-btn {
         width: 100%;
         padding: 15px;
     }
 
-    .map-section {
+    .cf-map-section {
         padding: 40px 0;
     }
 
-    .map-section h2 {
+    .cf-map-section h2 {
         font-size: 1.8rem;
         margin-bottom: 30px;
     }
 
-    .map-container {
+    .cf-map-container {
         height: 300px;
         border-radius: 15px;
     }
 }
 
-/* Additional responsive adjustments */
 @media (max-width: 360px) {
-    .header h1 {
-        font-size: 1.8rem;
-    }
 
-    .contact-info-card,
-    .contact-form {
+    .cf-info-card,
+    .cf-form {
         padding: 20px 15px;
     }
 
-    .map-container {
+    .cf-map-container {
         height: 250px;
     }
 }
