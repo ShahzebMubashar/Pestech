@@ -1,33 +1,127 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 7rem 20px;
+    padding: 0rem 0 20px 0;
 }
 
-/* Header Styles */
-.header {
+/* Hero Section */
+.services-hero {
+    padding: 10rem 0 2.5rem 0;
+    background: linear-gradient(180deg, #eaffd1 0%, rgb(253, 253, 253) 100%);
     text-align: center;
-    padding: 60px 0 40px;
 }
 
-.header h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 20px;
-}
-
-.header p {
-    font-size: 1.1rem;
-    color: #718096;
-    max-width: 600px;
+.hero-content {
+    max-width: 75rem;
     margin: 0 auto;
-    line-height: 1.6;
+    padding: 0 1.5rem;
 }
+
+/* Section Headers (matching index.html) */
+.section-headers {
+    text-align: center;
+}
+
+.header-name {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    color: #153b3e;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background-color: #eaffd1;
+    z-index: 0;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.header-name::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 2rem;
+    padding: 1px;
+    background: linear-gradient(270deg, #ccfca5, #80b349, #ccfca5);
+    background-size: 400% 400%;
+    animation: borderMove 4s linear infinite;
+    z-index: -1;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    box-sizing: border-box;
+}
+
+.header-name:hover {
+    transform: scale(1.05);
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.header-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-details h1 {
+    font-size: 3rem;
+    color: #153b3e;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.header-details p {
+    font-size: 0.9rem;
+    color: #4b4b4b;
+    font-weight: 400;
+    max-width: 40rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+@media (max-width: 900px) {
+    
+    .services-hero {
+        padding-top: 9rem;
+    }
+
+    .header-details h1 {
+    font-size: 2rem;
+    }
+
+    .header-details p {
+        font-size: 0.8rem;
+        
+    }
+    
+}
+
 
 /* Contact Section */
 .contact-section {
-    padding: 40px 0 80px;
+    padding: 5rem 0;
 }
 
 .contact-wrapper {
