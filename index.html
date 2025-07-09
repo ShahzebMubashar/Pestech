@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <style>
+
+  </style>
+
 </head>
 
 <body>
@@ -89,27 +93,40 @@
             </div>
           </div>
           <div class="about-cards">
-            <div class="abt-card featured">
-              <img src="Pictures/abt-1.png" alt="abt-1">
-              <h3>Smart Energy</h3>
-              <p>We design intelligent solar systems that work efficiently and save you more.</p>
+            <div class="abt-card primary">
+              <img src="Pictures/A4.png" alt="Smart Energy" />
+              <div class="abt-card-footer">
+                <div class="abt-info">
+                  <h4>Smart Energy</h4>
+                </div>
+              </div>
             </div>
-            <div class="abt-card">
-              <img src="Pictures/abt-2.png" alt="abt-1">
-              <h3>Clean Power</h3>
-              <p>Switch to renewable energy that's better for your home and the environment.</p>
+            <div class="abt-card primary">
+              <img src="Pictures/A3.png" alt="Clean Power" />
+              <div class="abt-card-footer">
+                <div class="abt-info">
+                  <h4>Clean Power</h4>
+                </div>
+              </div>
             </div>
-            <div class="abt-card">
-              <img src="Pictures/abt-3.png" alt="abt-1">
-              <h3>Real Savings</h3>
-              <p>Lower your energy bills with cost-effective solar solutions built for you.</p>
+            <div class="abt-card primary">
+              <img src="Pictures/A2.png" alt="Real Savings" />
+              <div class="abt-card-footer">
+                <div class="abt-info">
+                  <h4>Real Savings</h4>
+                </div>
+              </div>
             </div>
-            <div class="abt-card">
-              <img src="Pictures/abt-4.png" alt="abt-1">
-              <h3>Future Ready</h3>
-              <p>We innovate constantly to bring you energy that's built for tomorrow.</p>
+            <div class="abt-card primary">
+              <img src="Pictures/A1.png" alt="Future Ready" />
+              <div class="abt-card-footer">
+                <div class="abt-info">
+                  <h4>Future Ready</h4>
+                </div>
+              </div>
             </div>
           </div>
+
           <div class="section-buttons">
             <a href="/about.html" class="section-button-styling">Learn More</a>
           </div>
@@ -267,6 +284,40 @@
         </div>
       </div>
     </section>
+
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-container-wrapper">
+          <div class="section-headers">
+            <p class="header-name">Demographics</p>
+            <div class="header-details">
+              <h2>Client Spectrum</h2>
+              <p>Serving energy needs of industrial units, modern homes, and remote village households.</p>
+            </div>
+          </div>
+
+          <input type="radio" name="slider" id="carousel-1" checked>
+          <input type="radio" name="slider" id="carousel-2">
+          <input type="radio" name="slider" id="carousel-3">
+
+          <div class="carousel-cards">
+            <label class="carousel-card" for="carousel-1" id="slide-1">
+              <img src="Pictures/Carousel-3.png" alt="Client 1">
+              <p class="carousel-text">"Solar Power for Remote Villages"</p>
+            </label>
+            <label class="carousel-card" for="carousel-2" id="slide-2">
+              <img src="Pictures/Carousel-2.png" alt="Client 2">
+              <p class="carousel-text">"Corporate Shift to Solar Energy"</p>
+            </label>
+            <label class="carousel-card" for="carousel-3" id="slide-3">
+              <img src="Pictures/Carousel-1.png" alt="Client 3">
+              <p class="carousel-text">"Urban Homes Go Solar"</p>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="testimonial-section">
       <div class="testimonial-container">
@@ -684,6 +735,17 @@
       }
     });
   </script>
+
+<script>
+  let index = 1;
+  const total = 3;
+  setInterval(() => {
+    document.getElementById(`carousel-${index}`).checked = true;
+    index = index % total + 1;
+  }, 2000);
+</script>
+
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
