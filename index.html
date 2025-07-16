@@ -23,6 +23,18 @@
   <main>
     <!-- Hero Section Replica Start -->
     <section class="hero-section-replica">
+      <div class="hero-slideshow">
+        <img class="hero-slide active" src="Pictures/hero/1.png" alt="Hero 1" />
+        <img class="hero-slide" src="Pictures/hero/2.png" alt="Hero 2" />
+        <img class="hero-slide" src="Pictures/hero/3.png" alt="Hero 3" />
+        <img class="hero-slide" src="Pictures/hero-bg.png" alt="Hero 4" />
+        <div class="hero-slideshow-buttons">
+          <button class="hero-slide-btn active" data-slide="0"><img src="Pictures/hero/1.png" alt="1" /></button>
+          <button class="hero-slide-btn" data-slide="1"><img src="Pictures/hero/2.png" alt="2" /></button>
+          <button class="hero-slide-btn" data-slide="2"><img src="Pictures/hero/3.png" alt="3" /></button>
+          <button class="hero-slide-btn" data-slide="3"><img src="Pictures/hero-bg.png" alt="4" /></button>
+        </div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="hero-content-replica">
         <div class="hero-text">
@@ -31,7 +43,6 @@
           <a href="#about" class="hero-btn-replica">Read More</a>
         </div>
       </div>
-      <div class="hero-bg-image"></div>
     </section>
 
     <section class="About-section fade-in">
@@ -716,6 +727,49 @@
     });
   </script>
 
+  <script>
+    // Hero Slideshow Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.hero-slide');
+      const buttons = document.querySelectorAll('.hero-slide-btn');
+      let current = 0;
+      let interval;
+
+      function showSlide(idx) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === idx);
+        });
+        buttons.forEach((btn, i) => {
+          btn.classList.toggle('active', i === idx);
+        });
+        current = idx;
+      }
+
+      function nextSlide() {
+        let next = (current + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function startSlideshow() {
+        interval = setInterval(nextSlide, 3000);
+      }
+
+      function stopSlideshow() {
+        clearInterval(interval);
+      }
+
+      buttons.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+          showSlide(idx);
+          stopSlideshow();
+          startSlideshow();
+        });
+      });
+
+      showSlide(0);
+      startSlideshow();
+    });
+  </script>
 </body>
 
 </html>
