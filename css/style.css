@@ -1,9 +1,40 @@
+html,
+body {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.hero-section-replica {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.hero-slideshow,
+.hero-overlay,
+.hero-content-replica {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: grey;
   margin: 0 0;
   height: 1000px;
   background-color: rgb(253, 253, 253);
+  overflow-x: hidden;
 }
 
 
@@ -371,7 +402,7 @@ body {
   min-height: 600px;
   max-width: 45vw;
   max-height: 45vw;
-  background: linear-gradient(120deg, #7ec850 0%, #1abcb8 100%);
+  background: linear-gradient(120deg, #3a7d1a 0%, #0e6b68 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -413,6 +444,12 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-slideshow img {
+  border-radius: 0px !important;
 }
 
 .hero-btn:hover {
@@ -428,8 +465,8 @@ body {
   z-index: 2;
 }
 
-.hero-image img {
-  max-width: 650px;
+.hero-slideshow img {
+  height: 50px !important;
   width: 100%;
   height: auto;
   border-radius: 1.5rem;
@@ -1652,12 +1689,57 @@ body {
 /* --- HERO SECTION REPLICA --- */
 .hero-section-replica {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
+  max-height: 100vh;
+}
+
+.hero-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+
+  .hero-slideshow,
+  .hero-slide {
+    height: 60vh;
+    min-height: 60vh;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-slideshow,
+  .hero-slide {
+    height: 50vh;
+    min-height: 50vh;
+    max-height: 50vh;
+  }
+
 }
 
 .hero-slideshow {
@@ -1760,8 +1842,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background: url('../Pictures/04.jpg') center right/cover no-repeat;
   z-index: 1;
 }
@@ -1770,20 +1852,21 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 80%;
   height: 100vh;
   background: linear-gradient(to right,
-      rgba(90, 180, 80, 0.85) 0%,
-      rgba(90, 180, 80, 0.85) 40%,
-      rgba(90, 180, 80, 0.35) 65%,
+
+      rgba(90, 180, 80, 0.85) 20%,
+      rgba(90, 180, 80, 0.85) 60%,
+      rgba(90, 180, 80, 0.35) 80%,
       rgba(90, 180, 80, 0.0) 100%);
   z-index: 2;
 }
 
 .hero-content-replica {
   position: relative;
-  z-index: 3;
-  width: 100vw;
+  z-index: 10;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -1791,7 +1874,9 @@ body {
 }
 
 .hero-text {
-  margin-left: 8vw;
+  position: relative;
+  z-index: 11;
+  margin: 0 8vw;
   max-width: 700px;
   color: #fff;
   display: flex;
@@ -1812,27 +1897,41 @@ body {
   font-size: 4.2rem;
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
+/* Modern hero button for all screens */
 .hero-btn-replica {
   display: inline-block;
-  background: #232c36;
+  background: linear-gradient(90deg, #1abcb8 0%, #7ec850 100%);
   color: #fff;
-  padding: 1rem 2.5rem;
-  border-radius: 0.25rem;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-decoration: none;
-  margin-top: 0.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
-  transition: background 0.2s, color 0.2s;
+  margin-top: 0.2rem;
+  box-shadow: 0 4px 16px rgba(26, 188, 184, 0.10);
+  border: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
-.hero-btn-replica:hover {
-  background: #1abcb8;
+.hero-btn-replica:hover,
+.hero-btn-replica:active {
+  background: linear-gradient(90deg, #7ec850 0%, #1abcb8 100%);
   color: #fff;
+  box-shadow: 0 6px 20px rgba(26, 188, 184, 0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .hero-btn-replica {
+    font-size: 0.95rem;
+    padding: 0.55rem 1.2rem;
+    margin-top: 1.2rem;
+  }
 }
 
 @media (max-width: 900px) {

@@ -16,6 +16,56 @@
 </head>
 
 <body>
+  <!-- Global Loader Overlay -->
+  <div id="global-loader"
+    style="position:fixed;z-index:99999;top:0;left:0;width:100vw;height:100vh;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+    <div class="loader-container"
+      style="position:relative;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <img src="/Pictures/hero-bg.png" alt="Background" class="bg-image"
+        style="width:100vw;height:100vh;object-fit:cover;position:absolute;top:0;left:0;z-index:1;opacity:0.4;">
+      <div class="energy-particles" style="position:absolute;width:100vw;height:100vh;pointer-events:none;z-index:1;">
+        <div class="particle"
+          style="position:absolute;width:2px;height:2px;background:#22c55e;border-radius:50%;left:20%;animation:float 4s ease-in-out infinite;animation-delay:0s;opacity:0.6;">
+        </div>
+        <div class="particle"
+          style="position:absolute;width:2px;height:2px;background:#22c55e;border-radius:50%;left:40%;animation:float 4s ease-in-out infinite;animation-delay:0.5s;opacity:0.6;">
+        </div>
+        <div class="particle"
+          style="position:absolute;width:2px;height:2px;background:#22c55e;border-radius:50%;left:60%;animation:float 4s ease-in-out infinite;animation-delay:1s;opacity:0.6;">
+        </div>
+        <div class="particle"
+          style="position:absolute;width:2px;height:2px;background:#22c55e;border-radius:50%;left:80%;animation:float 4s ease-in-out infinite;animation-delay:1.5s;opacity:0.6;">
+        </div>
+      </div>
+      <div class="content-wrapper"
+        style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2rem;">
+        <div class="icon-wrapper"
+          style="width:8rem;height:8rem;position:relative;animation:pulse 2s ease-in-out infinite;">
+          <svg viewBox="0 0 64 64" class="energy-icon"
+            style="width:100%;height:100%;filter:drop-shadow(0 0 20px rgba(34,197,94,0.5));">
+            <defs>
+              <clipPath id="liquid-fill-loader">
+                <rect class="fill-clip" x="0" y="64" width="64" height="64" />
+              </clipPath>
+              <linearGradient id="energyGradient-loader" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <path fill="#e6f8d8" d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z" />
+            <path fill="url(#energyGradient-loader)" clip-path="url(#liquid-fill-loader)"
+              d="M32 2 L20 36 H36 L28 62 L44 26 H28 Z" />
+          </svg>
+        </div>
+        <div class="loading-text"
+          style="color:whitesmoke;font-size:2rem;font-weight:600;text-align:center;margin-bottom:0.5rem;animation:fadeInOut 2s ease-in-out infinite;">
+          Powering Up<span class="dots"></span></div>
+        <div class="loading-subtitle"
+          style="color:whitesmoke;font-size:1rem;font-weight:400;text-align:center;margin-bottom:2rem;animation:slideUp 1s ease-out;">
+          Initializing energy systems</div>
+      </div>
+    </div>
+  </div>
 
   <div id="navbar-placeholder"></div>
 
@@ -27,13 +77,6 @@
         <img class="hero-slide active" src="Pictures/hero/1.png" alt="Hero 1" />
         <img class="hero-slide" src="Pictures/hero/2.png" alt="Hero 2" />
         <img class="hero-slide" src="Pictures/hero/3.png" alt="Hero 3" />
-        <img class="hero-slide" src="Pictures/hero-bg.png" alt="Hero 4" />
-        <div class="hero-slideshow-buttons">
-          <button class="hero-slide-btn active" data-slide="0"><img src="Pictures/hero/1.png" alt="1" /></button>
-          <button class="hero-slide-btn" data-slide="1"><img src="Pictures/hero/2.png" alt="2" /></button>
-          <button class="hero-slide-btn" data-slide="2"><img src="Pictures/hero/3.png" alt="3" /></button>
-          <button class="hero-slide-btn" data-slide="3"><img src="Pictures/hero-bg.png" alt="4" /></button>
-        </div>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content-replica">
@@ -769,6 +812,45 @@
       showSlide(0);
       startSlideshow();
     });
+  </script>
+
+  <script>
+    // Loader fade out on page load (immediate after all content and images are loaded)
+    window.addEventListener('load', function () {
+      var loader = document.getElementById('global-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(function () { loader.style.display = 'none'; }, 600);
+      }
+    });
+    // Animate fill
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        var fillClip = document.querySelector('.fill-clip');
+        if (fillClip) {
+          fillClip.style.transition = 'y 2s ease-out, height 2s ease-out';
+          fillClip.setAttribute('y', '0');
+          fillClip.setAttribute('height', '64');
+        }
+      }, 200);
+    });
+    // Animate loading text
+    window.addEventListener('DOMContentLoaded', function () {
+      var messages = ['Powering Up', 'Charging Systems', 'Loading Energy', 'Initializing Power', 'Boosting Performance'];
+      var subtitles = ['Initializing energy systems', 'Connecting to power grid', 'Optimizing performance', 'Calibrating sensors', 'Ready for launch'];
+      var messageIndex = 0;
+      var loadingText = document.querySelector('.loading-text');
+      var loadingSubtitle = document.querySelector('.loading-subtitle');
+      setInterval(function () {
+        messageIndex = (messageIndex + 1) % messages.length;
+        if (loadingText) loadingText.innerHTML = messages[messageIndex] + '<span class="dots"></span>';
+        if (loadingSubtitle) loadingSubtitle.textContent = subtitles[messageIndex];
+      }, 3000);
+    });
+    // Loader keyframes (for inline style)
+    var style = document.createElement('style');
+    style.innerHTML = `@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}@keyframes fadeInOut{0%,100%{opacity:0.7;}50%{opacity:1;}}@keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}@keyframes float{0%,100%{transform:translateY(100vh)scale(0);opacity:0;}10%,90%{opacity:0.6;transform:scale(1);}100%{transform:translateY(-100px)scale(0);opacity:0;}}`;
+    document.head.appendChild(style);
   </script>
 </body>
 
